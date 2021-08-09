@@ -5,14 +5,11 @@
     `;
 
     customElements.define('com-promos-is-helloworld2', class HelloWorld2 extends HTMLElement {
-
-
-		constructor() {
+        constructor() {
 			super(); 
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(tmpl.content.cloneNode(true));
 		}
-
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
