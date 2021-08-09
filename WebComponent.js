@@ -4,7 +4,7 @@
         <h1>Hello World from Sir Ivan</h1>
     `;
 
-    customElements.define('com-promos-is-helloworld1', class HelloWorld1 extends HTMLElement {
+    customElements.define('com-promos-is-helloworld2', class HelloWorld2 extends HTMLElement {
 
 
 		constructor() {
