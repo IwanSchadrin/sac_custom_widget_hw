@@ -4,7 +4,7 @@
         
     `;
 
-    customElements.define('com-promos-is-helloworld-step3', class HelloWorld extends HTMLElement {
+    customElements.define('com-promos-is-helloworld-step4', class HelloWorld extends HTMLElement {
         constructor() {
             super();
             this._shadowRoot = this.attachShadow({ mode: "open" });
@@ -33,7 +33,7 @@
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
             //if (this._firstConnection) {
-                this.redraw();
+            this.redraw();
             //}
         }
 
@@ -52,11 +52,20 @@
 
         //Getters and Setters
         get widgetText() {
-            return this._tagType;
+            return this._tagText;
         }
 
         set widgetText(value) {
             this._tagText = value;
+        }
+
+        //Getters and Setters
+        get headingType() {
+            return this._tagType;
+        }
+
+        set headingType(value) {
+            this._tagType = value;
         }
 
         redraw() {
