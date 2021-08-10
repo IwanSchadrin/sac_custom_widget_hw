@@ -42,5 +42,5 @@
 		}
 	}
 
-customElements.define("com-promos-is-helloworld-aps-step3", HelloWorldAps);
+customElements.define("com-promos-is-helloworld-aps-step4", HelloWorldAps);
 })();
