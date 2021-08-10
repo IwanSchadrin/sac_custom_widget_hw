@@ -4,10 +4,10 @@
         
     `;
 
-    customElements.define('com-promos-is-helloworld-step2', class HelloWorld extends HTMLElement {
+    customElements.define('com-promos-is-helloworld-step3', class HelloWorld extends HTMLElement {
         constructor() {
             super();
-            this._shadowRoot = this.attachShadow({mode: "open"});            
+            this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._tagContainer;
             this._tagType = "h1";
@@ -32,9 +32,9 @@
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
-            if (this._firstConnection) {
+            //if (this._firstConnection) {
                 this.redraw();
-            }
+            //}
         }
 
         //When the custom widget is removed from the canvas or the analytic application is closed
@@ -50,17 +50,26 @@
         }
         */
 
+        //Getters and Setters
+        get widgetText() {
+            return this._tagType;
+        }
+
+        set widgetText(value) {
+            this._tagText = value;
+        }
+
         redraw() {
-            if (this._tagText != null){
-                if (this._tagContainer){
+            if (this._tagText != null) {
+                if (this._tagContainer) {
                     this._tagContainer.parentNode.removeChild(this._tagContainer);
                 }
-        
+
                 var shadow = window.getSelection(this._shadowRoot);
-                
+
                 this._tagContainer = document.createElement(this._tagType);
-                var theText = document.createTextNode(this._tagText);    
-                this._tagContainer.appendChild(theText); 
+                var theText = document.createTextNode(this._tagText);
+                this._tagContainer.appendChild(theText);
                 this._shadowRoot.appendChild(this._tagContainer);
             }
         }
